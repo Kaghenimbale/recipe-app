@@ -1,0 +1,8 @@
+<div class="recipes-index f c">
+  <% @recipes.each do |recipe| %>
+    <% if recipe.public || can?(:read, recipe) %>
+      <%= render 'shared/recipe_info', recipe: recipe%>
+    <% end %>
+  <% end %>
+  <%= render 'shared/new_recipe'%>
+</div>
