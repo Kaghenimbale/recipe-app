@@ -29,6 +29,11 @@ body {
   outline: none;
 }
 
+.color {
+  background: green;
+  color: white;
+}
+
 .btn {
   padding: 0.6rem;
   border-radius: 5px;
