@@ -2,13 +2,8 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family:
-    'Trebuchet MS',
-    'Lucida Sans Unicode',
-    'Lucida Grande',
-    'Lucida Sans',
-    Arial,
-    sans-serif;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+    'Lucida Sans', Arial, sans-serif;
 }
 
 .form {
@@ -46,4 +41,46 @@ body {
   background: white;
   box-shadow: 0 0 10px gray;
   font-weight: bold;
+}
+
+/* Food table style */
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td,
+th {
+  border: 1px solid #ddd;
+  text-align: left;
+  padding: 8px;
+}
+
+.table-column:nth-child(even) {
+  background-color: #e8e8e8;
+}
+
+.table-column-1 {
+  background: rgb(169, 169, 169);
+}
+
+.table {
+  width: 80vw;
+  margin: 0 auto;
+}
+
+.container {
+  padding: 3rem;
+}
+
+.btn_container {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.food-btn {
+  box-shadow: 0 0 10px gray;
 }
