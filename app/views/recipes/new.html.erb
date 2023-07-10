@@ -1,0 +1,30 @@
+<%= form_with model: @recipe, url: recipes_url, class: "form f c", method: :post, scope: :new_recipe, local: true do |f| %>
+  <div class="name-form inputs f c">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="numeric-form inputs f c">
+    <%= f.label :preparation_time %>
+    <%= f.number_field :preparation_time, step: 0.1 %>
+  </div>
+
+  <div class="numeric-form inputs f c">
+    <%= f.label :cooking_time %>
+    <%= f.number_field :cooking_time, step: 0.1 %>
+  </div>
+
+  <div class="description-form inputs f c">
+    <%= f.label :description %>
+    <%= f.text_area :description %>
+  </div>
+
+  <div class="public-form inputs f c">
+    <%= f.label :public %>
+    <%= f.check_box :public %>
+  </div>
+
+  <div class="button-a f">
+    <%= f.submit %>
+  </div>
+<% end %>
