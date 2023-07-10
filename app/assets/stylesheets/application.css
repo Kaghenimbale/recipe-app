@@ -35,4 +35,5 @@ body {
   border: none;
   background: white;
   box-shadow: 0 0 10px gray;
+  font-weight: bold;
 }
