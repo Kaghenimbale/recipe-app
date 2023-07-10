@@ -115,6 +115,12 @@ To run tests, run the following command:
 - Twitter: [@twitterhandle](https://twitter.com/MbaleKagheni)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/kagheni-mbale-401b90240/)
 
+👤 **Eduardo Villarreal**
+
+- GitHub: [@evillaz](https://github.com/evillaz)
+- Twitter: [@evillazz](https://twitter.com/evillazz)
+- LinkedIn: [LinkedIn](https://linkedin.com/in/eduardo-villarreal-144a8925a)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- FUTURE FEATURES -->
