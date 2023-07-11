@@ -1,4 +1,20 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
 body {
+  display: flex;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -12,26 +28,36 @@ body {
 }
 
 .form {
-  display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  gap: 0.4rem;
+  gap: 1.4rem;
+  align-self: center;
+  width: 100%;
+  padding: 2rem 5rem;
 }
 
 .inputs {
-  display: flex;
-  flex-direction: column;
-  gap: 0.6rem;
-  background: rgb(13, 110, 228);
-  padding: 2rem;
-  border-radius: 5px;
+  align-items: flex-start;
+  width: 20rem;
+  gap: 1rem;
 }
 
-.input {
-  width: 20rem;
-  height: 2rem;
-  outline: none;
+.inputs label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.inputs input[type="text"],
+.inputs input[type="email"],
+.inputs input[type="password"],
+.inputs textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.field {
+  width: 100%;
 }
 
 .color {
@@ -46,4 +72,49 @@ body {
   background: white;
   box-shadow: 0 0 10px gray;
   font-weight: bold;
+}
+
+.actions {
+  align-self: center;
+}
+
+.f {
+  display: flex;
+}
+
+.c {
+  flex-direction: column;
+}
+
+.r {
+  flex-direction: row;
+}
+
+.fixed-links {
+  position: absolute;
+  text-decoration: underline;
+  color: #000;
+}
+
+.fixed-links a:visited {
+  color: #000;
+}
+
+.sign-out {
+  top: 1rem;
+  right: 2rem;
+  background-color: #fff;
+  border: none;
+}
+
+.go-back {
+  top: 0.5rem;
+  left: 2rem;
+  background-color: #fff;
+  text-decoration: underline;
+}
+
+.notice,
+.alert {
+  order: 3;
 }

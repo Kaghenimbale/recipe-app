@@ -1,0 +1,5 @@
+<% if can?(:destroy, recipe) %>
+  <%= form_with(model: recipe, method: :delete, data: { turbo_confirm: 'Are you sure'}, url: recipe_path(recipe), class: 'delete-recipe delete-buttons') do |form| %>
+    <%= form.submit "Remove" %>
+  <% end %>
+<% end %>
