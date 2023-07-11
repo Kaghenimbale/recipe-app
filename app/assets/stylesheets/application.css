@@ -2,13 +2,8 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family:
-    'Trebuchet MS',
-    'Lucida Sans Unicode',
-    'Lucida Grande',
-    'Lucida Sans',
-    Arial,
-    sans-serif;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+    'Lucida Sans', Arial, sans-serif;
 }
 
 .form {
@@ -89,4 +84,51 @@ th {
 
 .food-btn {
   box-shadow: 0 0 10px gray;
+}
+
+/* edourdo styles */
+
+.actions {
+  align-self: center;
+}
+
+.f {
+  display: flex;
+}
+
+.c {
+  flex-direction: column;
+}
+
+.r {
+  flex-direction: row;
+}
+
+.fixed-links {
+  position: absolute;
+  text-decoration: underline;
+  color: #000;
+}
+
+.fixed-links a:visited {
+  color: #000;
+}
+
+.sign-out {
+  top: 1rem;
+  right: 2rem;
+  background-color: #fff;
+  border: none;
+}
+
+.go-back {
+  top: 0.5rem;
+  left: 2rem;
+  background-color: #fff;
+  text-decoration: underline;
+}
+
+.notice,
+.alert {
+  order: 3;
 }
