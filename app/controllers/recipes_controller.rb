@@ -1,6 +1,6 @@
 class RecipesController < ApplicationController
   before_action :authenticate_user!
-  
+
   def index
     @recipes = Recipe.all
   end
@@ -34,6 +34,7 @@ class RecipesController < ApplicationController
     @recipe.destroy
     redirect_to recipes_url
   end
+
   private
 
   def recipe_params
