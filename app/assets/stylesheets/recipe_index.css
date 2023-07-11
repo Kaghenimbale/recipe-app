@@ -1,6 +1,8 @@
 .recipes-index {
-  padding: 3rem 2rem;
+  padding: 5rem 2rem;
   gap: 1rem;
+  width: 70%;
+  align-self: center;
 }
 
 .recipe-container {
