@@ -12,10 +12,9 @@ class FoodsController < ApplicationController
     @food.user = current_user if current_user
 
     if @food.save
-      redirect_to root_path, notice: 'Food created successfully.'
+      redirect_to foods_path, notice: 'Food created successfully.'
     else
-      puts @food.errors.full_messages
-      redirect_to root_path, alert: 'Failed to create Food!'
+      redirect_to foods_path, alert: 'Failed to create Food!'
     end
   end
 
