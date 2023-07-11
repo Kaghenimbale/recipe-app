@@ -11,7 +11,8 @@
   width: 20rem;
 }
 
-.recipe-inputs label {
+.recipe-inputs label,
+.numeric-form label {
   font-weight: bold;
   margin-bottom: 5px;
 }
