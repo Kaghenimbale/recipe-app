@@ -1,4 +1,6 @@
 class FoodsController < ApplicationController
+  before_action :authenticate_user!
+
   def index
     @foods = Food.all
   end
@@ -20,8 +22,12 @@ class FoodsController < ApplicationController
 
   def destroy
     @food = Food.find(params[:id])
-    @food.destroy
-    redirect_to foods_path, notice: 'Food deleted successfully.'
+    if can? :destroy, @food
+      @food.destroy
+      redirect_to foods_path, notice: 'Food deleted successfully.'
+    else
+      redirect_to foods_path, notice: 'You are not allowed to destroy this food.'
+    end
   end
 
   private
