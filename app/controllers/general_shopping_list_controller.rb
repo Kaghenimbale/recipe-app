@@ -4,7 +4,7 @@ class GeneralShoppingListController < ApplicationController
     @foods = Food.all
     @total = 0
     current_user.foods.each do |food|
-       @total += food.price*food.quantity
+      @total += food.price * food.quantity
     end
   end
 end

@@ -12,10 +12,14 @@
 </tr>
 <% @foods.each do |food| %>
   <tr class="table-column">
-    <td> <%= food.name %> </td>
-    <td> <%= food.measurement_unit %> </td>
-    <td>$ <%= food.price %>  </td>
+  <td> <%= food.name %> </td>
+  <td> <%= food.measurement_unit %> </td>
+  <td>$ <%= food.price %>  </td>
+  <% if current_user.id == food.user_id %>
     <td><%= button_to 'Delete', food_path(food.id), method: :delete, class: "btn" %></td>
+  <% else %>
+    <td>Not allowed to delete</td>
+  <%end%>
   </tr>
 <%end%>
 </table>
