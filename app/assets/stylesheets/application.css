@@ -2,13 +2,8 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family:
-    'Trebuchet MS',
-    'Lucida Sans Unicode',
-    'Lucida Grande',
-    'Lucida Sans',
-    Arial,
-    sans-serif;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+    'Lucida Sans', Arial, sans-serif;
 }
 
 .form {
@@ -37,6 +32,7 @@ body {
 .color {
   background: green;
   color: white;
+  padding: 0.8rem;
 }
 
 .btn {
@@ -109,31 +105,39 @@ th {
   flex-direction: row;
 }
 
-.fixed-links {
-  position: absolute;
-  text-decoration: underline;
-  color: #000;
-}
-
-.fixed-links a:visited {
-  color: #000;
-}
-
-.sign-out {
-  top: 1rem;
-  right: 2rem;
-  background-color: #fff;
-  border: none;
-}
-
-.go-back {
-  top: 0.5rem;
-  left: 2rem;
-  background-color: #fff;
-  text-decoration: underline;
+.buttons {
+  width: 95vw;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
 }
 
 .notice,
 .alert {
   order: 3;
+}
+
+/* navigation bar */
+
+.navbar {
+  background: rgb(13, 110, 228);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+}
+
+.logo h1 {
+  color: white;
+}
+
+.navlinks {
+  display: flex;
+  gap: 2rem;
+}
+
+.navlink {
+  color: white;
 }
