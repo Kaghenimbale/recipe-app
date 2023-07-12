@@ -1,20 +1,4 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
 body {
-  display: flex;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -28,36 +12,26 @@ body {
 }
 
 .form {
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 1.4rem;
-  align-self: center;
-  width: 100%;
-  padding: 2rem 5rem;
+  justify-content: center;
+  gap: 0.4rem;
 }
 
 .inputs {
-  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  background: rgb(13, 110, 228);
+  padding: 2rem;
+  border-radius: 5px;
+}
+
+.input {
   width: 20rem;
-  gap: 1rem;
-}
-
-.inputs label {
-  font-weight: bold;
-  margin-bottom: 5px;
-}
-
-.inputs input[type="text"],
-.inputs input[type="email"],
-.inputs input[type="password"],
-.inputs textarea {
-  width: 100%;
-  padding: 10px;
-  border-radius: 4px;
-  border: 1px solid #ccc;
-}
-
-.field {
-  width: 100%;
+  height: 2rem;
+  outline: none;
 }
 
 .color {
@@ -73,6 +47,51 @@ body {
   box-shadow: 0 0 10px gray;
   font-weight: bold;
 }
+
+/* Food table style */
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td,
+th {
+  border: 1px solid #ddd;
+  text-align: left;
+  padding: 8px;
+}
+
+.table-column:nth-child(even) {
+  background-color: #e8e8e8;
+}
+
+.table-column-1 {
+  background: rgb(13, 110, 228);
+  color: white;
+}
+
+.table {
+  width: 80vw;
+  margin: 0 auto;
+}
+
+.container {
+  padding: 3rem;
+}
+
+.btn_container {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.food-btn {
+  box-shadow: 0 0 10px gray;
+}
+
+/* edourdo styles */
 
 .actions {
   align-self: center;
