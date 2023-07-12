@@ -2,8 +2,13 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
-    'Lucida Sans', Arial, sans-serif;
+  font-family:
+    'Trebuchet MS',
+    'Lucida Sans Unicode',
+    'Lucida Grande',
+    'Lucida Sans',
+    Arial,
+    sans-serif;
 }
 
 .form {
@@ -42,6 +47,11 @@ body {
   background: white;
   box-shadow: 0 0 10px gray;
   font-weight: bold;
+}
+
+.btn-width {
+  width: fit-content;
+  margin-top: 0.5rem;
 }
 
 /* Food table style */
