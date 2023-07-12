@@ -1,18 +1,20 @@
+<div class="form">
 <%= form_with model: @recipe, url: recipes_url, class: "recipes-form f c", method: :post, scope: :new_recipe, local: true do |f| %>
+  <div class="inputs">
   <div class="name-form recipe-inputs f c">
     <%= f.label :name %>
-    <%= f.text_field :name %>
+    <%= f.text_field :name, class: "input" %>
   </div>
 
   <div class="numeric-values f r">
     <div class="numeric-form f c">
       <%= f.label :preparation_time %>
-      <%= f.number_field :preparation_time, step: 0.1 %>
+      <%= f.number_field :preparation_time, step: 0.1, class: "input" %>
     </div>
 
     <div class="numeric-form f c">
       <%= f.label :cooking_time %>
-      <%= f.number_field :cooking_time, step: 0.1 %>
+      <%= f.number_field :cooking_time, step: 0.1, class: "input" %>
     </div>
   </div>
 
@@ -29,4 +31,6 @@
   <div class="button-a f">
     <%= f.submit %>
   </div>
+  </div>
 <% end %>
+</div>
