@@ -15,7 +15,7 @@
   </div>  
   <div class='buttons f r'>
   <% if can?(:read, @recipe) %>
-    <%= link_to 'General shopping list', '#', class: 'btn' %>
+    <%= link_to 'Generate shopping list', general_shopping_list_index_path, class:"btn" %>
     <%= link_to 'Add Ingredients', new_recipe_recipe_food_url(@recipe), data: { turbo_frame: "modal", turbo_visit_control: "reload"}, class: 'btn' %>
   <% end %>
     <% if can?(:read, @recipe) %>
