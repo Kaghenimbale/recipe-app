@@ -14,6 +14,9 @@
 
   <body class="f c">
     <%= turbo_frame_tag "modal" %>
+  <% if current_user %>
+  <%= render 'shared/index'  %>
+  <% end %>
     <p class="notice" class="color"><%= notice %></p>
     <p class="alert" class="color"><%= alert %></p>
     <%= yield %>

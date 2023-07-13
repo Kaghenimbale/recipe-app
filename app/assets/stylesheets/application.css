@@ -170,6 +170,7 @@ th {
   color: white;
 }
 
+
 a {
   text-decoration: none;
   color: #000;
@@ -177,4 +178,18 @@ a {
 
 a.btn {
   font-size: 1rem;
+}
+/* general shopiing list */
+
+.general h2 {
+  text-align: center;
+  font-size: 2rem;
+}
+
+.general-description {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 60vw;
+  margin: 0 auto;
 }
