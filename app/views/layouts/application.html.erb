@@ -2,19 +2,21 @@
 <html>
   <head>
     <title>RecipeApp</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_include_tag 'recipes', 'data-turbolinks-track': 'reload' %>
     <%= javascript_importmap_tags %>
   </head>
 
   <body class="f c">
+    <%= turbo_frame_tag "modal" %>
     <p class="notice" class="color"><%= notice %></p>
     <p class="alert" class="color"><%= alert %></p>
     <%= yield %>
-
     <% if user_signed_in? %>
     <div class="buttons">
     <button class="btn">
