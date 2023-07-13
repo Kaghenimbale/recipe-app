@@ -170,7 +170,6 @@ th {
   color: white;
 }
 
-
 a {
   text-decoration: none;
   color: #000;
@@ -179,6 +178,7 @@ a {
 a.btn {
   font-size: 1rem;
 }
+
 /* general shopiing list */
 
 .general h2 {
