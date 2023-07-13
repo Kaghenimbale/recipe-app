@@ -3,6 +3,8 @@
   gap: 1rem;
   width: 70%;
   align-self: center;
+  position: absolute;
+  z-index: 0;
 }
 
 .recipe-container {
@@ -17,7 +19,7 @@
   justify-content: space-between;
 }
 
-.left-block {
+.recipe-name {
   width: 30%;
 }
 
@@ -43,9 +45,10 @@
   width: max-content;
 }
 
-.left-block input[type='submit'] {
+.recipe-container input[type='submit'] {
   background-color: transparent;
   border: none;
   text-decoration: underline;
   cursor: pointer;
+  z-index: 100;
 }
