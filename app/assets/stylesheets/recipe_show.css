@@ -1,0 +1,16 @@
+.recipe-content {
+  padding: 3rem;
+  gap: 1rem;
+}
+
+.recipe-content h2 {
+  align-self: center;
+}
+
+.recipe-info .left-block {
+  gap: 1rem;
+}
+
+.food-btn {
+  cursor: pointer;
+}
