@@ -42,9 +42,7 @@ class RecipesController < ApplicationController
 
   def destroy
     @recipe = Recipe.find(params[:id])
-    if @recipe.recipe_foods.present?
-      @recipe.recipe_foods.destroy_all
-    end
+    @recipe.recipe_foods.destroy_all if @recipe.recipe_foods.present?
     @recipe.destroy
     redirect_to recipes_url
   end
