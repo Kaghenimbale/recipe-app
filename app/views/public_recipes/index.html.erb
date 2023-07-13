@@ -1,0 +1,18 @@
+<div class="recipes-index f c">
+  <% @recipes.each do |recipe| %>
+  <div class="recipe-container f c">
+    <a href="/recipes/<%= recipe.id %>" class="recipe-info f r">
+      <div class="left-block">
+        <h2><%= recipe.name %></h2>
+        <span>By: <%= recipe.user.name %></span>
+      </div>
+      <div class="right-block">
+        <% total_foods = recipe.recipe_foods.count %>
+        <p>Total food items: <%= total_foods %></p>
+        <% total_price = recipe.recipe_foods.joins(:food).sum("foods.price * recipe_foods.quantity") %>
+        <p>Total price: $ <%= total_price %></p>
+      </div>
+  </a>
+  </div>
+  <% end %>
+</div>
