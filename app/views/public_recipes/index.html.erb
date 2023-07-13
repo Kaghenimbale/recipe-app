@@ -12,7 +12,7 @@
         <% total_price = recipe.recipe_foods.joins(:food).sum("foods.price * recipe_foods.quantity") %>
         <p>Total price: $ <%= total_price %></p>
       </div>
-  </a>
+    </a>
   </div>
   <% end %>
 </div>
