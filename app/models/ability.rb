@@ -8,7 +8,7 @@ class Ability
 
     return unless user.present?
 
-    can %i[read destroy], Recipe, user_id: user.id
+    can %i[read destroy create toggle], Recipe, user_id: user.id
 
     can :manage, Food, user_id: user.id
 
