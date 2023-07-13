@@ -11,11 +11,13 @@
 
 </tr>
 <% @foods.each do |food| %>
+  <% if current_user.id == food.user_id %>
   <tr class="table-column">
-    <td> <%= food.name %> </td>
-    <td> <%= food.measurement_unit %> </td>
-    <td>$ <%= food.price %>  </td>
-    <td><%= button_to 'Delete', food_path(food.id), method: :delete, class: "btn" %></td>
+  <td> <%= food.name %> </td>
+  <td> <%= food.measurement_unit %> </td>
+  <td>$ <%= food.price %>  </td>
+  <td><%= button_to 'Delete', food_path(food.id), method: :delete, class: "btn" %></td>
+  <%end%>
   </tr>
 <%end%>
 </table>
