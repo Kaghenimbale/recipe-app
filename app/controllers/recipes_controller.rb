@@ -1,8 +1,13 @@
 class RecipesController < ApplicationController
+  skip_before_action :verify_authenticity_token
   before_action :authenticate_user!
 
   def index
     @recipes = Recipe.all
+  end
+
+  def show
+    @recipe = Recipe.find(params[:id])
   end
 
   def new
@@ -11,6 +16,12 @@ class RecipesController < ApplicationController
     respond_to do |format|
       format.html { render :new, locals: { post: @recipe, user: @user } }
     end
+  end
+
+  def toggle
+    @recipe = Recipe.find(params[:id])
+    @recipe.update(public: params[:public])
+    head :ok
   end
 
   def create
@@ -31,6 +42,9 @@ class RecipesController < ApplicationController
 
   def destroy
     @recipe = Recipe.find(params[:id])
+    if @recipe.recipe_foods.present?
+      @recipe.recipe_foods.destroy_all
+    end
     @recipe.destroy
     redirect_to recipes_url
   end
