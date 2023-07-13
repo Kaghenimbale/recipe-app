@@ -1,6 +1,6 @@
 class FoodsController < ApplicationController
   before_action :authenticate_user!
-
+  
   def index
     @foods = Food.all
   end
@@ -14,7 +14,7 @@ class FoodsController < ApplicationController
     @food.user = current_user if current_user
 
     if @food.save
-      redirect_to foods_path, notice: 'Food created successfully.'
+      redirect_to request.referrer, notice: 'Food created successfully.'
     else
       redirect_to foods_path, alert: 'Failed to create Food!'
     end

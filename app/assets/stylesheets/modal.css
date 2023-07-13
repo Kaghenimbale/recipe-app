@@ -1,0 +1,41 @@
+#modal {
+  height: 100vh;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+}
+
+.modal {
+  z-index: 1;
+  padding: 2rem;
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 5px;
+  border: solid 1px #000;
+  width: 10rem;
+}
+
+.add-ingredient {
+  gap: 1rem;
+}
+
+.modal-form .cancel {
+  display: flex;
+  align-self: center;
+}
+
+.modal-form input,
+select {
+  border-radius: 5px;
+  text-align: center;
+}
+
+.quantity input {
+  width: auto;
+}
+
+.modify-form {
+  gap: 1rem;
+}
