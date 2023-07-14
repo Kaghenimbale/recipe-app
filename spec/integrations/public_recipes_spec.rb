@@ -3,7 +3,7 @@ RSpec.describe 'Public Recipes', type: :feature do
   include Devise::Test::IntegrationHelpers
   let!(:users) do
     User.create([{ name: 'User one', email: 'user1@example.com', password: 'password', confirmation_token: '23moe234f',
-                   confirmed_at: Time.now, confirmation_sent_at: Time.now},
+                   confirmed_at: Time.now, confirmation_sent_at: Time.now },
                  { name: 'User two', email: 'user2@example.com', password: 'password',
                    confirmed_at: Time.now, confirmation_sent_at: Time.now }])
   end
@@ -29,16 +29,12 @@ RSpec.describe 'Public Recipes', type: :feature do
   context 'when viewing the page' do
     it 'shows all public recipes.' do
       recipes.each do |recipe|
-        if recipe.public == true
-          expect(page).to have_content(recipe.name)
-        end
+        expect(page).to have_content(recipe.name) if recipe.public == true
       end
     end
     it 'shows all public recipes authors.' do
       recipes.each do |recipe|
-        if recipe.public == true
-          expect(page).to have_content(recipe.user.name)
-        end
+        expect(page).to have_content(recipe.user.name) if recipe.public == true
       end
     end
     it 'When I click on a recipe, it redirects me to that recipe show page' do
@@ -48,7 +44,7 @@ RSpec.describe 'Public Recipes', type: :feature do
     context 'calculates the values:' do
       before do
         @total_foods = recipes[1].recipe_foods.count
-        @total_price = recipes[1].recipe_foods.joins(:food).sum("foods.price * recipe_foods.quantity")
+        @total_price = recipes[1].recipe_foods.joins(:food).sum('foods.price * recipe_foods.quantity')
       end
       it 'it shows the amount of food items in the recipe.' do
         expect(page).to have_content(@total_foods)

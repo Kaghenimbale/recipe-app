@@ -1,9 +1,9 @@
 require 'rails_helper'
-RSpec.describe "Shopping list", type: :feature do
+RSpec.describe 'Shopping list', type: :feature do
   include Devise::Test::IntegrationHelpers
   let!(:user) do
     User.create({ name: 'User one', email: 'user1@example.com', password: 'password', confirmation_token: '23moe234f',
-                   confirmed_at: Time.now, confirmation_sent_at: Time.now})
+                  confirmed_at: Time.now, confirmation_sent_at: Time.now })
   end
   let!(:recipes) do
     Recipe.create!([{ name: 'Recipe One', public: true, description: 'Recipe One Description', user: user },
@@ -33,11 +33,11 @@ RSpec.describe "Shopping list", type: :feature do
     context 'calculates the values:' do
       before do
         @foods_recipe = user.recipes.joins(recipe_foods: :food)
-        .select('foods.name AS food_name, foods.price AS food_price, foods.quantity AS food_quantity,
+          .select('foods.name AS food_name, foods.price AS food_price, foods.quantity AS food_quantity,
                 foods.measurement_unit as food_measurement, SUM(recipe_foods.quantity) AS total_amount,
                 (SUM(recipe_foods.quantity)- foods.quantity) AS total_missing')
-        .group('foods.name, foods.price, foods.quantity, foods.measurement_unit')
-        .to_a      
+          .group('foods.name, foods.price, foods.quantity, foods.measurement_unit')
+          .to_a
         @count = @foods_recipe.count
         @total_price = @foods_recipe.sum { |food_recipe| food_recipe.food_price * food_recipe.total_missing }
       end
@@ -59,7 +59,7 @@ RSpec.describe "Shopping list", type: :feature do
       end
       it 'it shows the price value for each food needed' do
         @foods_recipe.each do |food|
-          expect(page).to have_content((food.food_price*food.total_missing))
+          expect(page).to have_content((food.food_price * food.total_missing))
         end
       end
     end
