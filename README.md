@@ -91,6 +91,10 @@ To run the project, execute the following command:
   ruby main.rb
 ```
 
+### Deployment
+
+[Live Demo](https://recipe-app-i8cm.onrender.com)
+
 ### Run tests
 
 To run tests, run the following command:
