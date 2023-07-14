@@ -83,10 +83,7 @@ test:
 #
 production:
   <<: *default
-  adapter: postgresql
-  encoding: unicode
-  host: dpg-ciojralgkuvh5ggm3ajg-a
-  port: 5432
+  url: <%= ENV['DATABASE_URL'] %>
   database: recipe_app_t4uy
   username: recipe_app_t4uy_user
   password: l6S4H6ihEcjRYvx7n3EhudeNTrexFvES
