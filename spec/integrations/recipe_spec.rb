@@ -4,8 +4,14 @@ RSpec.describe 'Recipes', type: :system do
   include Devise::Test::IntegrationHelpers
 
   before(:each) do
-    @user = User.create(name: 'User one', email: 'user@example.com', password: 'password', confirmation_token: '23moe234f',
-                        confirmed_at: Time.now, confirmation_sent_at: Time.now)
+    @user = User.create(
+      name: 'User one',
+      email: 'user@example.com',
+      password: 'password',
+      confirmation_token: '23moe234f',
+      confirmed_at: Time.now,
+      confirmation_sent_at: Time.now
+    )
     @recipe_one = @user.recipes.create(name: 'Recipe One', description: 'Recipe One Description')
 
     sign_in @user # Authenticate the user

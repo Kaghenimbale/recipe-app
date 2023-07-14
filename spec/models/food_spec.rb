@@ -2,8 +2,14 @@ require 'rails_helper'
 
 RSpec.describe Food, type: :model do
   before(:each) do
-    @user = User.create(name: 'User one', email: 'user@example.com', password: 'password', confirmation_token: '23moe234f',
-                        confirmed_at: Time.now, confirmation_sent_at: Time.now)
+    @user = User.create(
+      name: 'User one',
+      email: 'user@example.com',
+      password: 'password',
+      confirmation_token: '23moe234f',
+      confirmed_at: Time.now,
+      confirmation_sent_at: Time.now
+    )
     @food = @user.foods.create(name: 'Food One', price: '10.99')
   end
 
