@@ -1,0 +1,23 @@
+<div class="recipe-details f c">
+  <div class="recipe-content f c">
+    <h2>
+      <%= @recipe.name %>
+    </h2>
+    <div class="recipe-info f r">
+      <div class="left-block f c">
+        <label>Preparation time: <%= @recipe.preparation_time %></label>
+        <label>Cooking time: <%= @recipe.cooking_time %></label>
+        <label>About the recipe:</label>
+        <span><%= @recipe.description %></span>
+      </div>
+      <%= render 'shared/toggle_public', recipe: @recipe%>
+    </div>
+  </div>  
+  <div class='buttons f r'>
+  <% if can?(:read, @recipe) %>
+    <%= link_to 'General shopping list', general_shopping_list_index_path, class: 'btn' %>
+    <%= link_to 'Add Ingredients', new_recipe_recipe_food_url(@recipe), data: { turbo_frame: "modal", turbo_visit_control: "reload"}, class: 'btn' %>
+  <% end %>
+  </div>  
+  <%= render 'shared/recipeFoods_details', recipe_foods: @recipe.recipe_foods, recipe: @recipe%>
+</div>

@@ -9,5 +9,13 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "foods#index"
   root "home#index"
-  resources :recipes
+  resources :recipes do
+    member do
+      post 'toggle'
+    end
+    resources :recipe_foods, only: [:new, :create, :update, :destroy] do
+      get :modify, on: :member
+    end
+  end
+  resources :public_recipes, only: [:index]
 end

@@ -1,0 +1,17 @@
+<div class="form-group">
+  <% if can?(:toggle, recipe) %>
+    <div class="form-group">
+      <%= label_tag 'recipe_ids[]', class: 'switch' do %>
+        <%= check_box_tag 'recipe_ids[]', recipe.id, recipe.public, class: 'toggle-public' %>
+        <span class="slider round"></span>
+      <% end %>
+    </div>
+  <% else %>
+    <div class="form-group">
+      <%= label_tag 'recipe_ids[]', class: 'switch' do %>
+        <%= check_box_tag 'recipe_ids[]', recipe.id, recipe.public, disabled: true, class: 'toggle-public' %>
+        <span class="slider disabled round"></span>
+      <% end %>
+    </div>
+  <% end %>
+</div>

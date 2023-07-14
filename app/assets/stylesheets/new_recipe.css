@@ -11,9 +11,13 @@
   width: 20rem;
 }
 
+label {
+  font-weight: bold;
+  width: max-content;
+}
+
 .recipe-inputs label,
 .numeric-form label {
-  font-weight: bold;
   margin-bottom: 5px;
 }
 
