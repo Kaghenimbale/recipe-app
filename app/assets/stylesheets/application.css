@@ -193,3 +193,8 @@ a.btn {
   width: 60vw;
   margin: 0 auto;
 }
+
+.add-food {
+  justify-content: center;
+  gap: 2rem;
+}

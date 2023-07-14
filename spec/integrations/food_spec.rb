@@ -63,9 +63,13 @@ RSpec.describe 'Foods', type: :system do
       assert_text @food_one.price
     end
 
-    scenario 'When I click on Add food, it redirects me to the foods index page' do
-      click_link 'Add Food'
-      assert_current_path new_food_path
+    context 'When I click on Add food' do
+      before do
+        click_link 'Add Food'
+      end
+      it 'it opens the modal to create new food.' do
+        expect(page).to have_selector('#modal')
+      end
     end
   end
 end

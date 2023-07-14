@@ -1,31 +1,33 @@
-<div class="form">
-  <%= form_with(model: @food, url: foods_path, local: true) do |form| %>
-    <div class='inputs'>
-      <div>
-        <%= form.label :name %>:<br />
-        <%= form.text_field :name, class: "input" %>
-      </div>
-      <div class="text-box">
-        <%= form.label :measurement_unit %>:<br />
-        <%= form.select :measurement_unit, options_for_select(['Kilogramme', 'Tonne', 'Grame', 'Decigramme']), {}, class: "input" %>
-      </div>
-      <div>
-        <%= form.label :price %>:<br />
-        <%= form.number_field :price, class: "input" %>
-      </div>
-      <div>
-        <%= form.label :quantity %>:<br />
-        <%= form.number_field :quantity, class: "input" %>
-      </div>
-      <div>
-        <%= form.submit "Submit", class: "btn" %>
-      </div>
-
-      <div class="post-btn">
-      <button class="btn">
-        <%= link_to "back",  foods_path(@food)%>
-      </button>
-      </div>
+<%= turbo_frame_tag "modal" do %>
+  <div data-controller="modals" data-action="turbo:submit-end->modals#submitEnd">
+    <div class="form">
+      <%= form_with(model: @food, url: foods_path, data: { turbo_frame: "_top" }, local: true) do |form| %>
+        <div class='inputs'>
+          <div>
+            <%= form.label :name %>:<br />
+            <%= form.text_field :name, class: "input" %>
+          </div>
+          <div class="text-box">
+            <%= form.label :measurement_unit %>:<br />
+            <%= form.select :measurement_unit, options_for_select(['Kilogramme', 'Tonne', 'Grame', 'Decigramme']), {}, class: "input" %>
+          </div>
+          <div>
+            <%= form.label :price %>:<br />
+            <%= form.number_field :price, class: "input" %>
+          </div>
+          <div>
+            <%= form.label :quantity %>:<br />
+            <%= form.number_field :quantity, class: "input" %>
+          </div>
+          <div class="add-food f r">
+            <%= form.submit "Submit", class: "btn" %>
+            <%= link_to "Cancel", "#", data: {
+              controller: "modals",
+              action: "modals#close"
+            }, class: "cancel btn" %>
+          </div>
+        </div>
+      <% end %>
     </div>
-  <% end %>
-</div>
+  </div>
+<% end %>
