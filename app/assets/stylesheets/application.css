@@ -1,0 +1,200 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family:
+    'Trebuchet MS',
+    'Lucida Sans Unicode',
+    'Lucida Grande',
+    'Lucida Sans',
+    Arial,
+    sans-serif;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+}
+
+.inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  background: rgb(13, 110, 228);
+  padding: 2rem;
+  border-radius: 5px;
+}
+
+.input {
+  width: 20rem;
+  height: 2rem;
+  outline: none;
+}
+
+.color {
+  background: green;
+  color: white;
+  padding: 0.8rem;
+}
+
+.btn {
+  font-size: 1rem;
+  padding: 0.6rem;
+  border-radius: 5px;
+  border: none;
+  background: white;
+  box-shadow: 0 0 10px gray;
+  font-weight: bold;
+  width: max-content;
+}
+
+.btn-width {
+  width: fit-content;
+  margin-top: 0.5rem;
+}
+
+/* Food table style */
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td,
+th {
+  border: 1px solid #ddd;
+  text-align: left;
+  padding: 8px;
+}
+
+.table-column:nth-child(even) {
+  background-color: #e8e8e8;
+}
+
+.table-column-1 {
+  background: rgb(13, 110, 228);
+  color: white;
+}
+
+.table {
+  width: 80vw;
+  margin: 0 auto;
+}
+
+.container {
+  padding: 3rem;
+}
+
+.btn_container {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.food-btn {
+  box-shadow: 0 0 10px gray;
+}
+
+/* edourdo styles */
+
+.actions {
+  align-self: center;
+}
+
+.f {
+  display: flex;
+}
+
+.c {
+  flex-direction: column;
+}
+
+.r {
+  flex-direction: row;
+}
+
+.buttons {
+  width: 95vw;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.notice,
+.alert {
+  order: 3;
+}
+
+/* navigation bar */
+
+.navbar {
+  background: rgb(13, 110, 228);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  margin-bottom: 1rem;
+}
+
+.logo h1 {
+  color: white;
+}
+
+.navlinks {
+  display: flex;
+  gap: 2rem;
+}
+
+.navlink {
+  color: white;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+a.btn {
+  font-size: 1rem;
+}
+
+/* general shopiing list */
+
+.general h2 {
+  text-align: center;
+  font-size: 2rem;
+}
+
+.general-description {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 60vw;
+  margin: 0 auto;
+}
+
+.add-food {
+  justify-content: center;
+  gap: 2rem;
+}

@@ -1,0 +1,24 @@
+<%= turbo_frame_tag "modal" do %>
+<div data-controller="modals" data-action="turbo:submit-end->modals#submitEnd">
+  <div class="modal">
+    <h3>
+      <%= @recipe_food.food.name %>
+    </h3>
+    <div class="modal-form">
+      <%= form_with model: @recipe_food, url: recipe_recipe_food_url(@recipe, @recipe_food), method: :patch, scope: :new_quantity_food, local: true, remote: true, data: { turbo_frame: "_top" }, class: 'modify-form f c' do |f| %>
+        <div class="quantity c">
+          <%= f.label :quantity %>
+          <%= f.number_field :quantity, step: 1, class: "input" %>
+        </div>
+        <div class="button-a f">
+          <%= f.submit 'Update' %>
+        </div>
+        <%= link_to "Cancel", "#", data: {
+          controller: "modals",
+          action: "modals#close"
+        }, class: "cancel btn" %>
+      <% end %>
+    </div>
+  </div>
+</div>
+<% end %>

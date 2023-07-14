@@ -1,0 +1,7 @@
+<article class="recipe-container f c">
+  <a href="/recipes/<%= recipe.id %>" class="recipe-info f r">
+    <h3 class="recipe-name"><%= recipe.name %></h3>
+    <p class="recipe-description"><%= recipe.description %></p>
+  </a>
+  <%= render 'shared/delete_recipe', recipe: recipe%>
+</article>

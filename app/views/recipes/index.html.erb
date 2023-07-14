@@ -1,0 +1,14 @@
+<div class="recipes-index f c">
+  <% if @recipes.present? %>
+    <% @recipes.each do |recipe| %>
+      <% if recipe.public || can?(:read, recipe) %>
+        <%= render 'shared/recipe_info', recipe: recipe%>
+      <% end %>
+    <% end %>
+  <% else %>
+    <div class="recipe-container f c">
+      <p>There's no available recipes yet. Try creating a new one.</p>
+    </div>
+  <% end %>
+  <%= render 'shared/new_recipe'%>
+</div>

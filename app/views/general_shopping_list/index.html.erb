@@ -1,0 +1,25 @@
+<div class="general">
+  <h2>Shopping List</h2>
+  <div class="general-description">
+    <h3>Amount of food items to buy: <%= @count %> </h3>
+    <h3>Total value of food needed: $ <%= @total_price %></h3>
+  </div>
+
+  <div class="table">
+<table>
+<tr class="table-column-1">
+<th>Food</th>
+<th>Quantity</th>
+<th>Price</th>
+</tr>
+<% @recipe_foods.each do |food| %>
+ <tr class="table-column">
+   <td> <%= food.food_name %> </td>
+   <td> <%= food.total_missing %> <%= food.food_measurement %> </td>
+   <td>$ <%= food.food_price*food.total_missing %>  </td>
+ </tr>
+<%end%>
+</table>
+
+</div>
+</div>

@@ -1,0 +1,25 @@
+<div class="table">
+  <table>
+    <tr class="table-column-1">
+      <th>Food</th>
+      <th>Quantity</th>
+      <th>Value</th>
+      <% if can?(:read, @recipe) %>
+        <th>Actions</th>
+      <% end %>
+    </tr>
+    <% recipe_foods.each do |f| %>
+      <tr class="table-column">
+        <td> <%= f.food.name %> </td>
+        <td> <%= f.quantity %> <%= f.food.measurement_unit %> </td>
+        <td>$ <%= f.quantity * f.food.price %>  </td>
+        <% if can?(:read, @recipe) %>
+          <td class="actions f r">
+            <%= link_to 'Modify', modify_recipe_recipe_food_url(f.recipe, f), method: "get", data: { turbo_frame: "modal", turbo_visit_control: "reload"}, class: "btn" %>
+            <%= button_to 'Delete', recipe_recipe_food_path(f.recipe, f), method: :delete, class: "btn" %>
+          </td>
+        <% end %>  
+      </tr>
+    <%end%>
+  </table>
+</div>
